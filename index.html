@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>You're Invited! 7th Birthday Celebration</title>
+  <meta name="description" content="You're invited to a magical purple-and-pink 7th birthday celebration!">
+  <meta name="theme-color" content="#4b1b5f">
+
+  <!-- Fonts: Fredoka (rounded, friendly) + Caveat (handwritten). Falls back gracefully if offline. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&amp;family=Fredoka:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🎀%3C/text%3E%3C/svg%3E">
+</head>
+
+<body>
+
+  <!-- =====================================================================
+       SVG SPRITE  (little reusable drawings: hearts, bows, stars, etc.)
+       Use them anywhere with:  <svg class="deco"><use href="#i-heart"/></svg>
+       ===================================================================== -->
+  <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="gFlame" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#ffe27a"/><stop offset="1" stop-color="#ff7a45"/>
+      </linearGradient>
+      <radialGradient id="gGlow">
+        <stop offset="0" stop-color="#fff3a8" stop-opacity=".95"/>
+        <stop offset="1" stop-color="#ffb3dd" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="gTierPurple" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#a566cf"/><stop offset="1" stop-color="#6a2f87"/>
+      </linearGradient>
+      <linearGradient id="gTierPink" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#ffb3dd"/><stop offset="1" stop-color="#ff6fb5"/>
+      </linearGradient>
+    </defs>
+
+    <symbol id="i-heart" viewBox="0 0 64 64">
+      <path d="M32 58C8 41 2 27 2 18 2 9 9 3 17 3c6 0 11 4 15 10C36 7 41 3 47 3c8 0 15 6 15 15 0 9-6 23-30 40z"/>
+      <path d="M14 14c-3 1-5 4-5 8" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="i-star" viewBox="0 0 64 64">
+      <polygon points="32,6 40,24 60,26 45,39 50,58 32,48 14,58 19,39 4,26 24,24" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="i-sparkle" viewBox="0 0 64 64">
+      <path d="M32 2C34 20 44 30 62 32 44 34 34 44 32 62 30 44 20 34 2 32 20 30 30 20 32 2z"/>
+    </symbol>
+
+    <symbol id="i-bow" viewBox="0 0 64 64">
+      <path d="M32 32C20 16 4 12 4 26c0 14 14 20 28 6z"/>
+      <path d="M32 32C44 16 60 12 60 26c0 14-14 20-28 6z"/>
+      <path d="M29 36 21 58l11-9z"/>
+      <path d="M35 36l8 22-11-9z"/>
+      <path d="M21 22c-4 2-6 5-6 9" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M43 22c4 2 6 5 6 9" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2.5" stroke-linecap="round"/>
+      <ellipse cx="32" cy="32" rx="7" ry="8" stroke="#fff" stroke-opacity=".8" stroke-width="2.5"/>
+    </symbol>
+
+    <symbol id="i-skull" viewBox="0 0 64 64">
+      <path d="M32 5C17 5 8 15 8 28c0 8 4 13 9 16v9c0 3 2 5 5 5h20c3 0 5-2 5-5v-9c5-3 9-8 9-16C56 15 47 5 32 5z" stroke="#1d0b26" stroke-width="3" stroke-linejoin="round"/>
+      <use href="#i-heart" x="13" y="20" width="16" height="16" style="fill:#ff4fa3"/>
+      <use href="#i-heart" x="35" y="20" width="16" height="16" style="fill:#ff4fa3"/>
+      <path d="M32 38l-3.5 6h7z" style="fill:#1d0b26"/>
+      <path d="M25 51v7M32 51v7M39 51v7" fill="none" stroke="#1d0b26" stroke-width="2.5" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="i-flower" viewBox="0 0 64 64">
+      <circle cx="32" cy="14" r="12"/><circle cx="50" cy="27" r="12"/><circle cx="43" cy="49" r="12"/>
+      <circle cx="21" cy="49" r="12"/><circle cx="14" cy="27" r="12"/>
+      <circle cx="32" cy="32" r="9" style="fill:#ffe27a"/>
+    </symbol>
+
+    <symbol id="i-cloud" viewBox="0 0 64 64">
+      <path d="M16 46C6 46 4 34 14 32c0-10 14-16 22-8 6-8 22-2 18 10 8 2 6 12-4 12z"/>
+    </symbol>
+
+    <symbol id="i-balloon" viewBox="0 0 48 80">
+      <ellipse cx="24" cy="26" rx="20" ry="24"/>
+      <path d="M24 50l-5 7h10z"/>
+      <path d="M24 57c-4 6 4 10 0 16" fill="none" stroke="currentColor" stroke-opacity=".7" stroke-width="2"/>
+      <ellipse cx="15" cy="16" rx="4" ry="7" transform="rotate(25 15 16)" style="fill:#fff;fill-opacity:.55"/>
+    </symbol>
+
+    <symbol id="i-flame" viewBox="0 0 20 28">
+      <path d="M10 1C15 8 19 13 19 18c0 6-4 9-9 9S1 24 1 18C1 13 5 10 10 1z" style="fill:url(#gFlame)"/>
+      <path d="M10 12c3 4 4 7 4 9 0 3-2 5-4 5s-4-2-4-5c0-2 1-5 4-9z" style="fill:#fffbe0"/>
+    </symbol>
+  </svg>
+
+
+  <!-- =====================================================================
+       1. HERO / COVER
+       ===================================================================== -->
+  <header class="hero" id="top">
+    <!-- Floating hearts, stars, bows, balloons are created by script.js -->
+    <div class="floaters" data-floaters="hearts stars bows sparkles balloons hearts" data-count="30" aria-hidden="true"></div>
+
+    <div class="hero__inner">
+      <p class="hero__kicker">YOU'RE INVITED! </p>
+
+      <h1 class="hero__title sticker-text">
+        <span>TWINS 7TH</span>
+        <span>BIRTHDAY</span>
+      </h1>
+
+      <p class="hero__name" data-info="name">Althea&Athena
+      </p>
+
+      <p class="hero__message">Come celebrate seven magical years of happiness, laughter, love, and beautiful memories! </p>
+
+      <!-- Big cute cake with a glowing number-7 candle (all drawn in SVG) -->
+      <svg class="hero__cake cake-svg" viewBox="0 0 300 330" role="img" aria-label="A cute birthday cake with a glowing number seven candle">
+        <circle class="cake-glow" cx="150" cy="44" r="66" fill="url(#gGlow)"/>
+
+        <use href="#i-sparkle" class="twinkle"    x="30"  y="88"  width="26" height="26" fill="#ffe27a"/>
+        <use href="#i-sparkle" class="twinkle t2" x="246" y="62"  width="32" height="32" fill="#ffffff"/>
+        <use href="#i-heart"   class="twinkle t3" x="256" y="150" width="24" height="24" fill="#ffd6ed"/>
+        <use href="#i-heart"   class="twinkle t2" x="18"  y="158" width="22" height="22" fill="#ff8fcf"/>
+
+        <!-- plate -->
+        <ellipse cx="150" cy="312" rx="132" ry="15" fill="#3b1450" opacity=".5"/>
+        <ellipse cx="150" cy="306" rx="130" ry="15" fill="#f6e9ff" stroke="#ffffff" stroke-width="3"/>
+
+        <!-- bottom tier -->
+        <rect x="40" y="206" width="220" height="96" rx="24" fill="url(#gTierPurple)"/>
+        <rect x="40" y="206" width="220" height="24" rx="12" fill="#ffffff"/>
+        <g fill="#ffffff">
+          <rect x="52"  y="214" width="20" height="34" rx="10"/>
+          <rect x="80"  y="214" width="20" height="20" rx="10"/>
+          <rect x="108" y="214" width="20" height="38" rx="10"/>
+          <rect x="136" y="214" width="20" height="22" rx="10"/>
+          <rect x="164" y="214" width="20" height="36" rx="10"/>
+          <rect x="192" y="214" width="20" height="20" rx="10"/>
+          <rect x="220" y="214" width="20" height="32" rx="10"/>
+        </g>
+        <!-- kawaii face -->
+        <ellipse cx="112" cy="272" rx="6" ry="8" fill="#1d0b26"/>
+        <ellipse cx="188" cy="272" rx="6" ry="8" fill="#1d0b26"/>
+        <circle cx="114" cy="269" r="2.2" fill="#fff"/>
+        <circle cx="190" cy="269" r="2.2" fill="#fff"/>
+        <ellipse cx="92"  cy="284" rx="11" ry="6" fill="#ff6fb5" opacity=".75"/>
+        <ellipse cx="208" cy="284" rx="11" ry="6" fill="#ff6fb5" opacity=".75"/>
+        <path d="M143 280q3.5 6 7 0 3.5 6 7 0" fill="none" stroke="#1d0b26" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="62"  cy="262" r="3" fill="#ffd6ed"/><circle cx="76" cy="292" r="3" fill="#ffe27a"/>
+        <circle cx="236" cy="262" r="3" fill="#ffd6ed"/><circle cx="224" cy="292" r="3" fill="#ffe27a"/>
+
+        <!-- top tier -->
+        <rect x="78" y="136" width="144" height="76" rx="20" fill="url(#gTierPink)"/>
+        <rect x="78" y="136" width="144" height="22" rx="11" fill="#ffffff"/>
+        <g fill="#ffffff">
+          <rect x="88"  y="144" width="18" height="30" rx="9"/>
+          <rect x="112" y="144" width="18" height="18" rx="9"/>
+          <rect x="136" y="144" width="18" height="34" rx="9"/>
+          <rect x="160" y="144" width="18" height="20" rx="9"/>
+          <rect x="184" y="144" width="18" height="28" rx="9"/>
+        </g>
+        <use href="#i-heart" x="100" y="184" width="18" height="18" fill="#ffffff" opacity=".9"/>
+        <use href="#i-heart" x="141" y="188" width="18" height="18" fill="#ffffff" opacity=".9"/>
+        <use href="#i-heart" x="182" y="184" width="18" height="18" fill="#ffffff" opacity=".9"/>
+
+        <!-- glowing number-7 candle -->
+        <g transform="translate(115 52)">
+          <path d="M10 10H60V28L34 90H16L40 28H10Z" fill="#4b1b5f" stroke="#4b1b5f" stroke-width="13" stroke-linejoin="round"/>
+          <path d="M10 10H60V28L34 90H16L40 28H10Z" fill="#ff4fa3" stroke="#ff4fa3" stroke-width="7" stroke-linejoin="round"/>
+          <g fill="#ffffff" opacity=".75">
+            <circle cx="22" cy="19" r="2.6"/><circle cx="36" cy="19" r="2.6"/><circle cx="50" cy="19" r="2.6"/>
+            <circle cx="42" cy="43" r="2.6"/><circle cx="35" cy="62" r="2.6"/><circle cx="29" cy="77" r="2.6"/>
+          </g>
+          <rect x="33.5" y="-3" width="3" height="11" rx="1.5" fill="#1d0b26"/>
+          <g class="flame"><use href="#i-flame" x="23" y="-34" width="24" height="34"/></g>
+        </g>
+
+        <!-- bow + skull decorations (sweet meets spooky-cute) -->
+        <use href="#i-bow"   x="18"  y="194" width="56" height="56" fill="#ff4fa3"/>
+        <use href="#i-skull" x="230" y="200" width="46" height="46" fill="#ffffff"/>
+        <use href="#i-bow"   x="242" y="190" width="24" height="24" fill="#ff8fcf"/>
+      </svg>
+
+      <a class="btn btn--open" id="openBtn" href="#celebrant">OPEN INVITATION</a>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =====================================================================
+         2. BIRTHDAY CELEBRANT
+         ===================================================================== -->
+    <section class="section section--sweet" id="celebrant" aria-labelledby="celebrant-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title" id="celebrant-title">Meet the <span data-info="celebrantLabel">Birthday Twins</span> </h2>
+        </div>
+
+      </div>
+
+      <!-- EDIT: put the celebrant's photo at images/birthday-celebrant.jpg -->
+      <!-- Full-bleed: this photo spans the entire width of the screen, not just the container -->
+      <div class="landscape-frame">
+        <div class="photo landscape-frame__photo">
+          <img src="kambal.jpg" alt="The birthday celebrant" onerror="this.hidden=true">
+          <span class="photo__hint"><small>images/birthday-celebrant.jpg</small></span>
+        </div>
+      </div>
+
+      <div class="container">   
+        <div class="profile glass">
+          <svg class="deco sticker" style="top:-1.6rem;left:-1.3rem;--s:4.4rem;--c:var(--hot-pink);--r:-18deg" aria-hidden="true"><use href="#i-bow"/></svg>
+          <svg class="deco sticker" style="top:-1rem;right:-1rem;--s:3rem;--c:var(--lavender);--r:12deg;--d:-1s" aria-hidden="true"><use href="#i-heart"/></svg>
+          <svg class="deco sticker" style="bottom:3.5rem;left:-1.3rem;--s:3.4rem;--c:var(--pink);--r:-8deg;--d:-2s" aria-hidden="true"><use href="#i-flower"/></svg>
+          <svg class="deco sticker" style="bottom:2rem;right:-1.1rem;--s:3rem;--c:var(--gold);--r:10deg;--d:-.5s" aria-hidden="true"><use href="#i-star"/></svg>
+          <svg class="deco sticker" style="top:38%;right:-1.6rem;--s:2.6rem;--c:#fff;--r:0deg;--d:-3s" aria-hidden="true"><use href="#i-sparkle"/></svg>
+
+          <h3 class="profile__name" data-info="name">Althea & Athena</h3>
+          <p class="profile__age">Turning 7! </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         4. THE SPECIAL NUMBER 7  (simple numbered list)
+         ===================================================================== -->
+
+
+    <section class="section section--dark" id="seven" aria-labelledby="seven-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title" id="seven-title">SEVEN MAGICAL THINGS</h2>
+          <p class="section__subtitle">Because we're turning 7, there are seven special things waiting to make our birthday extra magical!</p>
+        </div>
+
+        <div class="magic-cols">
+        <div class="magic-col">
+          <h3 class="magic-col__title"><a href="#wishes">7 Wishes</a></h3>
+          <ol class="magic-col__list">
+            <li><a class="magic-link" href="#wishes"><span > Lola Mely</span></a></li>
+            <li><a class="magic-link" href="#wishes"><span > Nanay Linda</span></a></li>
+            <li><a class="magic-link" href="#wishes"><span > Tita Ria</span></a></li>
+            <li><a class="magic-link" href="#wishes"><span > Ninang Ivy</span></a></li>
+            <li><a class="magic-link" href="#wishes"><span > Ninang Tine</span></a></li>
+            <li><a class="magic-link" href="#wishes"><span > Tito Iwa</span></a></li>
+            <li><a class="magic-link" href="#wishes"><span > Tita Hannah</span></a></li>
+          </ol>
+        </div>
+
+        <div class="magic-col">
+          <h3 class="magic-col__title"><a href="#chocolates">7 Chocolates</a></h3>
+          <ol class="magic-col__list">
+            <li><a class="magic-link" href="#chocolates"><span > Tito Edcel</span></a></li>
+            <li><a class="magic-link" href="#chocolates"><span > Yoohan</span></a></li>
+            <li><a class="magic-link" href="#chocolates"><span > Michaela</span></a></li>
+            <li><a class="magic-link" href="#chocolates"><span > Athena Lexine</span></a></li>
+            <li><a class="magic-link" href="#chocolates"><span > Ninong Ruben</span></a></li>
+            <li><a class="magic-link" href="#chocolates"><span > Tita Elaysa</span></a></li>
+            <li><a class="magic-link" href="#chocolates"><span > Ninong Banban</span></a></li>
+          </ol>
+        </div>
+
+        <div class="magic-col">
+          <h3 class="magic-col__title"><a href="#gifts">7 Gifts</a></h3>
+          <ol class="magic-col__list">
+            <li><a class="magic-link" href="#gifts"><span > Ninang Lea</span></a></li>
+            <li><a class="magic-link" href="#gifts"><span > Ate Angel</span></a></li>
+            <li><a class="magic-link" href="#gifts"><span > Ninong Jayson</span></a></li>
+            <li><a class="magic-link" href="#gifts"><span > Ninang Riza</span></a></li>
+            <li><a class="magic-link" href="#gifts"><span > Ninong Renren</span></a></li>
+            <li><a class="magic-link" href="#gifts"><span > Ninong Reygie</span></a></li>
+            <li><a class="magic-link" href="#gifts"><span > Ninong Alvin(Ninang Princess)</span></a></li>
+          </ol>
+        </div>
+
+        <div class="magic-col">
+          <h3 class="magic-col__title"><a href="#bills">7 Bills</a></h3>
+          <ol class="magic-col__list">
+            <li><a class="magic-link" href="#bills"><span > Kuya Andoy</span></a></li>
+            <li><a class="magic-link" href="#bills"><span > Ninang Anne</span></a></li>
+            <li><a class="magic-link" href="#bills"><span > Ninang Eldridge</span></a></li>
+            <li><a class="magic-link" href="#bills"><span > Ninang Hazel</span></a></li>
+            <li><a class="magic-link" href="#bills"><span > Ninong Ar-Ar</span></a></li>
+            <li><a class="magic-link" href="#bills"><span > Ninong Paul</span></a></li>
+            <li><a class="magic-link" href="#bills"><span > Ninong Jose</span></a></li>
+          </ol>
+        </div>
+        </div>
+      </div>
+
+        <!-- LEFT background image -->
+        <div class="bg-img bg-img--left" style="top:22%;left:2%;--w:230px;--r:-8deg;--br:32px;--t:7s">
+            <img src="melody.png" alt=""
+                onload="this.parentElement.classList.add('has-img')"    
+                onerror="this.hidden=true">
+            <span class="bg-img__hint">images/side-left.png</span>
+        </div>
+
+        <!-- RIGHT background image -->
+        <div class="bg-img bg-img--right" style="top:26%;right:2%;--w:280px;--r:9deg;--br:32px;--t:6.5s;--d:-2s">
+            <img src="kuromi.png" alt=""
+                onload="this.parentElement.classList.add('has-img')"
+                onerror="this.hidden=true">
+            <span class="bg-img__hint">images/side-right.png</span>
+        </div>
+      
+    </section>
+
+    
+
+
+    <!-- =====================================================================
+         3. INVITATION DETAILS
+         ===================================================================== -->
+    <section class="section section--pink" id="details" aria-labelledby="details-title">
+      <div class="container">
+        <div class="invite glass">
+          <svg class="deco sticker" style="top:-1.5rem;right:-1.2rem;--s:4rem;--c:var(--purple);--r:16deg" aria-hidden="true"><use href="#i-bow"/></svg>
+          <svg class="deco sticker" style="bottom:-1.2rem;left:-1rem;--s:3.4rem;--c:var(--hot-pink);--r:-10deg;--d:-2s" aria-hidden="true"><use href="#i-flower"/></svg>
+
+          <h2 class="section__title" id="details-title">You're Invited to Twins Special Day!</h2>
+
+          <div class="divider" aria-hidden="true"><svg class="deco"><use href="#i-heart"/></svg></div>
+
+          <!-- EDIT the values in script.js (INVITE object) and they update everywhere -->
+          <dl class="invite__list">
+            <div class="invite__row"><dt><span aria-hidden="true">🎂</span> Celebrant</dt><dd data-info="name">Althea & Athena</dd></div>
+            <div class="invite__row"><dt><span aria-hidden="true">📅</span> Date</dt><dd data-info="date">October 11, 2026</dd></div>
+            <div class="invite__row"><dt><span aria-hidden="true">⏰</span> Time</dt><dd data-info="time">10:00 AM - 12:00 PM</dd></div>
+            <div class="invite__row"><dt><span aria-hidden="true">📍</span> Venue</dt><dd data-info="venue">Jollibee Deparo</dd></div>
+            <div class="invite__row"><dt><span aria-hidden="true">👗</span> Dress Code</dt><dd data-info="dressCode">Purple &amp; Pink (Optional)</dd></div>
+          </dl>
+
+          <div class="divider" aria-hidden="true"><svg class="deco"><use href="#i-star"/></svg></div>
+
+          <a class="btn" data-map href="https://www.google.com/maps/place/Jollibee+Deparo+Road+Caloocan+Drive-Thru/@14.7411917,121.0204718,17z/data=!3m1!4b1!4m6!3m5!1s0x3397b1b97ca43031:0xc67f6c1d3f9f7abc!8m2!3d14.7411865!4d121.0230467!16s%2Fg%2F11z9v63kc0?entry=ttu&g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">📍 VIEW LOCATION</a>
+        </div>
+      </div>
+    </section>
+
+
+<!-- =====================================================================
+         15. FINAL SCREEN
+         ===================================================================== -->
+    <section class="section section--dark final" id="final" aria-labelledby="final-title">
+      <div class="floaters" data-floaters="hearts stars bows sparkles balloons" data-count="24" aria-hidden="true"></div>
+      <div class="rain" data-rain="46" aria-hidden="true"></div>
+
+      <div class="container final__inner">
+        <h2 class="final__thanks" id="final-title">THANK YOU FOR BEING PART OF OUR SPECIAL DAY!</h2>
+        <p class="final__age sticker-text">7 YEARS OLD</p>
+        <p class="final__see">SEE YOU AT THE PARTY! </p>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Gift pop-up (opened by script.js when a gift is clicked) -->
+  <dialog class="popup" id="giftPopup" aria-labelledby="giftTitle">
+    <div class="popup__card">
+      <svg class="deco popup__bow" aria-hidden="true"><use href="#i-bow"/></svg>
+      <p class="popup__emoji" aria-hidden="true">🎁</p>
+      <h3 id="giftTitle">🎀 Surprise!</h3>
+      <p class="popup__msg" id="giftMessage"></p>
+      <button type="button" class="btn" id="giftClose">Yay!</button>
+    </div>
+  </dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
